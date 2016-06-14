@@ -1,4 +1,7 @@
 <?php
+/**
+ * @package glossary
+ */
 $xpdo_meta_map['Term']= array (
   'package' => 'glossary',
   'version' => '1.1',
@@ -6,10 +9,10 @@ $xpdo_meta_map['Term']= array (
   'extends' => 'xPDOSimpleObject',
   'fields' => 
   array (
-    'term' => NULL,
-    'explanation' => NULL,
-    'modified' => 'CURRENT_TIMESTAMP',
-    'modified_by' => NULL,
+    'term' => '',
+    'explanation' => '',
+    'modified' => NULL,
+    'modified_by' => 0,
   ),
   'fieldMeta' => 
   array (
@@ -19,20 +22,22 @@ $xpdo_meta_map['Term']= array (
       'precision' => '255',
       'phptype' => 'string',
       'null' => false,
+      'default' => '',
     ),
     'explanation' => 
     array (
       'dbtype' => 'text',
       'phptype' => 'string',
       'null' => false,
+      'default' => '',
     ),
     'modified' => 
     array (
       'dbtype' => 'timestamp',
       'phptype' => 'timestamp',
-      'null' => false,
-      'default' => 'CURRENT_TIMESTAMP',
-      'extra' => 'on update current_timestamp',
+      'null' => true,
+      'default' => NULL,
+      'attributes' => 'ON UPDATE CURRENT_TIMESTAMP',
     ),
     'modified_by' => 
     array (
@@ -40,6 +45,7 @@ $xpdo_meta_map['Term']= array (
       'precision' => '11',
       'phptype' => 'integer',
       'null' => false,
+      'default' => 0,
     ),
   ),
   'aggregates' => 

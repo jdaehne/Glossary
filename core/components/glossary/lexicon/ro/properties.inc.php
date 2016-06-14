@@ -5,7 +5,3 @@ $_lang['prop_glossary.termTpl_desc'] = 'Chunk-ul pentru termeni';
 $_lang['prop_glossary.showNav_desc'] = 'Afișează indexul alfabetic';
 $_lang['prop_glossary.navOuterTpl_desc'] = 'Chunk-ul pentru indexul alfabetic';
 $_lang['prop_glossary.navItemTpl_desc'] = 'Chunk-ul pentru literele din index';
-
-$_lang['prop_glossary.resId_desc'] = 'ID-ul paginii pe care este plasat snippet-ul Glossary';
-$_lang['prop_glossary.tpl_desc']   = 'Chunk-ul pentru termenul evidențiat';
-

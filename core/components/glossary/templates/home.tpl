@@ -1,1 +1,1 @@
-<div id="glossary-panel-main"></div>
+<div id="glossary-panel-home"></div>

@@ -1,0 +1,140 @@
+{
+  "name": "Glossary",
+  "lowCaseName": "glossary",
+  "description": "Maintain a Glossary",
+  "author": "Alan Pich, Thomas Jakobi",
+  "version": "2.0.2-pl2",
+  "package": {
+    "menus": [
+      {
+        "text": "glossary.menu",
+        "description": "glossary.menu_desc",
+        "action": "home",
+        "parent": "components",
+        "namespace": "glossary"
+      }
+    ],
+    "elements": {
+      "chunks": [
+        {
+          "name": "Glossary.listOuterTpl",
+          "file": "listOuterTpl.chunk.html"
+        },
+        {
+          "name": "Glossary.listGroupTpl",
+          "file": "listGroupTpl.chunk.html"
+        },
+        {
+          "name": "Glossary.listItemTpl",
+          "file": "listItemTpl.chunk.html"
+        },
+        {
+          "name": "Glossary.navOuterTpl",
+          "file": "navOuterTpl.chunk.html"
+        },
+        {
+          "name": "Glossary.navItemTpl",
+          "file": "navItemTpl.chunk.html"
+        },
+        {
+          "name": "Glossary.highlighterTpl",
+          "file": "highlighterTpl.chunk.html"
+        }
+      ],
+      "plugins": [
+        {
+          "name": "GlossaryHighlighter",
+          "file": "glossaryhighlighter.plugin.php",
+          "description": "Glossary Term Highlighter.",
+          "events": [
+            "OnLoadWebDocument"
+          ]
+        }
+      ],
+      "snippets": [
+        {
+          "name": "Glossary",
+          "file": "glossary.snippet.php",
+          "description": "Displays a glossary",
+          "properties": [
+            {
+              "name": "outerTpl",
+              "value": "Glossary.listOuterTpl"
+            },
+            {
+              "name": "groupTpl",
+              "value": "Glossary.listGroupTpl"
+            },
+            {
+              "name": "termTpl",
+              "value": "Glossary.listItemTpl"
+            },
+            {
+              "name": "showNav",
+              "type": "list",
+              "options": [
+                {
+                  "text": "yes",
+                  "value": "1"
+                },
+                {
+                  "text": "no",
+                  "value": "0"
+                }
+              ],
+              "value": "1"
+            },
+            {
+              "name": "navOuterTpl",
+              "value": "Glossary.navOuterTpl"
+            },
+            {
+              "name": "navItemTpl",
+              "value": "Glossary.navItemTpl"
+            }
+          ]
+        }
+      ]
+    },
+    "systemSettings": [
+      {
+        "key": "debug",
+        "type": "combo-boolean",
+        "area": "system",
+        "value": "0"
+      },
+      {
+        "key": "resid",
+        "area": "site",
+        "value": "0"
+      },
+      {
+        "key": "tpl",
+        "area": "site",
+        "value": "Glossary.highlighterTpl"
+      },
+      {
+        "key": "fullwords",
+        "type": "combo-boolean",
+        "area": "site",
+        "value": "1"
+      },
+      {
+        "key": "sections",
+        "type": "combo-boolean",
+        "area": "site",
+        "value": "0"
+      }
+    ]
+  },
+  "database": {
+    "tables": [
+      "Term"
+    ]
+  },
+  "build": {
+    "readme": "docs/readme.txt",
+    "license": "docs/license.txt",
+    "changelog": "docs/changelog.txt"
+  }
+}
