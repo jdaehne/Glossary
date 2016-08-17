@@ -19,8 +19,8 @@ $_lang['glossary.term_err_ns_explanation'] = 'Sie müssen eine Erklärung eingeb
 $_lang['glossary.term_err_ns_term'] = 'Sie müssen einen Begriff eingeben';
 $_lang['glossary.term_err_nv_term'] = 'Der Begriff enthält ungültige Zeichen, Sie können Buchstaben, Zahlem, Leerzeichen und folgende Zeichen benutzen: :.;,-_';
 
-$_lang['setting_glossary.debug'] = 'Debug Aktivieren';
-$_lang['setting_glossary.debug_desc'] = 'Debug-Informationen im MODX Fehlerprotokoll hinzufügen.';
+$_lang['setting_glossary.debug'] = 'Debug';
+$_lang['setting_glossary.debug_desc'] = 'Debug-Informationen im MODX Fehlerprotokoll ausgeben.';
 $_lang['setting_glossary.fullwords'] = 'Suche Ganze Wörter';
 $_lang['setting_glossary.fullwords_desc'] = 'Nur ganze Worte eines Glossarbegriffs im Ressourcen-Inhalt ersetzen.';
 $_lang['setting_glossary.resid'] = 'Glossar Ressourcen ID';

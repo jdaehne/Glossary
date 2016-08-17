@@ -19,7 +19,7 @@ $_lang['glossary.term_err_ns_explanation'] = 'Explicația nu este validă sau li
 $_lang['glossary.term_err_ns_term'] = 'Termenul nu este valid sau lipsește';
 $_lang['glossary.term_err_nv_term'] = 'Termenul conține caractere nevalide. Ai putea folosi litere, cifre, un spațiu și următoarele caractere: :.;,-_';
 
-$_lang['setting_glossary.debug'] = 'Activează Debug';
+$_lang['setting_glossary.debug'] = 'Debug';
 $_lang['setting_glossary.debug_desc'] = 'Adăugați informații de depanare la jurnalul de MODX de eroare.';
 $_lang['setting_glossary.fullwords'] = 'Caută cuvinte complete';
 $_lang['setting_glossary.fullwords_desc'] = 'Înlocuiește numai cuvinte complete ale unui termen glosar în conținutul de resurse.';

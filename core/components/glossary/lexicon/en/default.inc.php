@@ -19,8 +19,8 @@ $_lang['glossary.term_err_ns_explanation'] = 'You need to give an explanation';
 $_lang['glossary.term_err_ns_term'] = 'You need to specify a term';
 $_lang['glossary.term_err_nv_term'] = 'The term contains invalid characters. You could use letters, numbers, a space and the following characters: :.;,-_';
 
-$_lang['setting_glossary.debug'] = 'Enable Debug';
-$_lang['setting_glossary.debug_desc'] = 'Log debug information in the MODX error log.';
+$_lang['setting_glossary.debug'] = 'Debug';
+$_lang['setting_glossary.debug_desc'] = 'Log debug informations in MODX error log.';
 $_lang['setting_glossary.fullwords'] = 'Search Full Words';
 $_lang['setting_glossary.fullwords_desc'] = 'Replace only full words of a glossary term in the resource content.';
 $_lang['setting_glossary.resid'] = 'Glossary Resource ID';
