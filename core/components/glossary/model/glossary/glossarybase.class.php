@@ -77,6 +77,7 @@ class GlossaryBase
         $this->config = array_merge($this->config, array(
             'glossaryStart' => $this->getOption('glossaryStart', $config, '<!-- GlossaryStart -->'),
             'glossaryEnd' => $this->getOption('glossaryEnd', $config, '<!-- GlossaryEnd -->'),
+            'html' => (bool)$this->getOption('html', $config, true),
         ));
 
         $modx->getService('lexicon', 'modLexicon');
@@ -175,8 +176,9 @@ class GlossaryBase
         $terms = $this->getTerms();
         $maskStart = '<_^_>';
         $maskEnd = '<_$_>';
+        $fullwords = $this->getOption('fullwords', null, true);
         foreach ($terms as $term) {
-            if ($this->getOption('fullwords', null, true)) {
+            if ($fullwords) {
                 foreach ($sections as &$section) {
                     if (($enableSections && substr($section, 0, strlen($this->getOption('glossaryStart'))) == $this->getOption('glossaryStart') && preg_match('/\b' . preg_quote($term['term']) . '\b/u', $section)) ||
                         (!$enableSections && preg_match('/\b' . preg_quote($term['term']) . '\b/u', $section))
@@ -197,11 +199,14 @@ class GlossaryBase
         $text = implode('', $sections);
 
         // And replace the terms after to avoid nested replacement
+        $html = $this->getOption('html');
         foreach ($terms as $term) {
+            $term['explanation'] = ($html) ? $term['explanation'] : strip_tags($term['explanation']);
             $chunk = $this->modx->getChunk($chunkName, array(
                 'link' => $target . '#' . strtolower(str_replace(' ', '-', $term['term'])),
                 'term' => $term['term'],
-                'explanation' => htmlspecialchars($term['explanation'], ENT_QUOTES, $this->modx->getOption('modx_charset'))
+                'explanation' => htmlspecialchars($term['explanation'], ENT_QUOTES, $this->modx->getOption('modx_charset')),
+                'html' => ($html) ? '1' : ''
             ));
             $text = str_replace($maskStart . $term['term'] . $maskEnd, $chunk, $text);
         }

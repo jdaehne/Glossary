@@ -1,6 +1,11 @@
 Changelog for Glossary
 ======================
 
+- 2.1.0
+    - The explanation uses an Rich Text Editor (if a MODX RTE is installed and
+      the Glossary system setting html is enabled).
+    - The default templates use bootstrap data attributes for tooltip
+      generation.
 - 2.0.2
     - Don't replace terms nested in explanations of another term.
 - 2.0.1

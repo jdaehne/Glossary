@@ -29,3 +29,5 @@ $_lang['setting_glossary.sections'] = 'Restrict to Sections';
 $_lang['setting_glossary.sections_desc'] = 'Replace glossary terms only in sections marked with &lt;!— GlossaryStart --&gt;&lt;!— GlossaryEnd --&gt;.';
 $_lang['setting_glossary.tpl'] = 'Highlight Template';
 $_lang['setting_glossary.tpl_desc'] = 'Template Chunk for the highlight replacement.';
+$_lang['setting_glossary.html'] = 'Allow HTML';
+$_lang['setting_glossary.html_desc'] = 'Allow HTML in the explanation (enables a Rich Text Editor in the editing Form).';

@@ -42,6 +42,7 @@ class GlossaryHomeManagerController extends modExtraManagerController
             MODx.load({xtype: "glossary-page-home"});
         });
         </script>');
+        $this->loadRichTextEditor();
     }
 
     public function getLanguageTopics()
@@ -61,5 +62,20 @@ class GlossaryHomeManagerController extends modExtraManagerController
     public function getTemplateFile()
     {
         return $this->glossary->getOption('templatesPath') . 'home.tpl';
+    }
+
+    public function loadRichTextEditor()
+    {
+        $useEditor = $this->modx->getOption('use_editor');
+        $whichEditor = $this->modx->getOption('which_editor');
+        if ($useEditor && !empty($whichEditor)) {
+            $onRichTextEditorInit = $this->modx->invokeEvent('OnRichTextEditorInit', array(
+                'editor' => $whichEditor
+            ));
+            if (is_array($onRichTextEditorInit)) {
+                $onRichTextEditorInit = implode('', $onRichTextEditorInit);
+            }
+            $this->addHtml($onRichTextEditorInit);
+        }
     }
 }

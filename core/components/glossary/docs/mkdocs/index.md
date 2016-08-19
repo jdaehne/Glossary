@@ -7,7 +7,7 @@ described and `explanation` is the description of said term.
 
 ### Requirements
 
-* MODX Revolution 2.3+
+* MODX Revolution 2.5+ (maybe works with 2.3+)
 * PHP v5.4+
 
 ### Features

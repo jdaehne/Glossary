@@ -17,7 +17,7 @@ The following properties could be set in the snippet call:
 
 Property | Description | Default
 ---------|-------------|--------
-showNav | Show the letter nav at the top of the list. | Yes
+showNav | Show the letter nav at the top of the list. | 1
 outerTpl | Template chunk for glossary outer wrapper. | Glossary.listOuterTpl
 groupTpl | Template chunk for glossary item group. | Glossary.listGroupTpl
 termTpl | Template chunk for glossary term items. | Glossary.listItemTpl
@@ -32,11 +32,12 @@ could be controlled by the following MODX System settings:
 
 Setting | Description | Default
 ------------|---------|--------
-debug | Log debug information in the MODX error log. | No
+debug | Log debug informations in the MODX error log. | No
 fullwords | Replace only full words of a glossary term in the resource content. | Yes
 resid | ID of a resource containing a Glossary snippet call. | 0
 tpl | Template Chunk for the highlight replacement. | Glossary.highlighterTpl
-sections | Replace glossary terms only in sections marked with &lt;!— GlossaryStart --&gt;&lt;!— GlossaryEnd --&gt;. | False
+sections | Replace glossary terms only in sections surrounded by `<!— GlossaryStart -->` and `<!— GlossaryEnd -->`. | No
+html | Allow HTML in the explanation (enables a rich-text editor in the editing form). | Yes
 
 ## Available placeholders
 The following placeholders are available in the chunks used by the snippet and

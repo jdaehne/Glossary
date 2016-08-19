@@ -3,7 +3,7 @@
     <object class="Term" table="glossary" extends="xPDOSimpleObject">
         <field key="term" dbtype="varchar" precision="255" phptype="string" null="false" default=""/>
         <field key="explanation" dbtype="text" phptype="string" null="false" default=""/>
-        <field key="modified" dbtype="timestamp" phptype="timestamp" null="true" default="NULL" attributes="ON UPDATE CURRENT_TIMESTAMP" />
+        <field key="modified" dbtype="timestamp" phptype="timestamp" null="true" default="NULL" attributes="ON UPDATE CURRENT_TIMESTAMP"/>
         <field key="modified_by" dbtype="int" precision="11" phptype="integer" null="false" default="0"/>
 
         <aggregate alias="Editor" class="modUser" local="modified_by" foreign="id" cardinality="one" owner="foreign"/>

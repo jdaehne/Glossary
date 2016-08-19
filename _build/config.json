@@ -3,7 +3,7 @@
   "lowCaseName": "glossary",
   "description": "Maintain a Glossary",
   "author": "Alan Pich, Thomas Jakobi",
-  "version": "2.0.2-pl2",
+  "version": "2.1.0",
   "package": {
     "menus": [
       {
@@ -124,6 +124,12 @@
         "type": "combo-boolean",
         "area": "site",
         "value": "0"
+      },
+      {
+        "key": "html",
+        "type": "combo-boolean",
+        "area": "site",
+        "value": "1"
       }
     ]
   },

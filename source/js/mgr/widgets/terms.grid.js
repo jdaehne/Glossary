@@ -135,6 +135,12 @@ Ext.extend(Glossary.grid.Terms, MODx.grid.Grid, {
                         this.refresh();
                     },
                     scope: this
+                },
+                afterRender: {
+                    fn: function (c) {
+                        this.initTinyMCE(c);
+                    },
+                    scope: createUpdateTerm
                 }
             }
         });
@@ -212,10 +218,13 @@ Ext.reg('glossary-grid-terms', Glossary.grid.Terms);
 
 Glossary.window.CreateUpdateTerm = function (config) {
     config = config || {};
+    this.ident = config.ident || 'cuterm' + Ext.id();
     Ext.applyIf(config, {
         url: Glossary.config.connectorUrl,
         action: (config.isUpdate) ? 'mgr/term/update' : 'mgr/term/create',
         autoHeight: true,
+        width: 700,
+        closeAction: 'close',
         fields: [{
             xtype: 'textfield',
             fieldLabel: _('glossary.term'),
@@ -223,6 +232,7 @@ Glossary.window.CreateUpdateTerm = function (config) {
             anchor: '100%'
         }, {
             xtype: 'textarea',
+            id: this.ident + '-glossary-explanation',
             fieldLabel: _('glossary.explanation'),
             name: 'explanation',
             anchor: '100%'
@@ -231,9 +241,14 @@ Glossary.window.CreateUpdateTerm = function (config) {
             name: 'id',
             hidden: true
         }]
-
     });
     Glossary.window.CreateUpdateTerm.superclass.constructor.call(this, config);
 };
-Ext.extend(Glossary.window.CreateUpdateTerm, MODx.Window);
+Ext.extend(Glossary.window.CreateUpdateTerm, MODx.Window, {
+    initTinyMCE: function (c) {
+        if (typeof MODx.loadRTE != 'undefined' && Glossary.config.html) {
+            MODx.loadRTE(c.ident + '-glossary-explanation');
+        }
+    }
+});
 Ext.reg('glossary-window-term-create-update', Glossary.window.CreateUpdateTerm);
