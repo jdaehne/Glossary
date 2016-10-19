@@ -176,12 +176,12 @@ Ext.extend(Glossary.grid.Terms, MODx.grid.Grid, {
                 {
                     className: 'update',
                     icon: 'pencil-square-o',
-                    text: _('delicart.order_update')
+                    text: _('glossary.term_update')
                 },
                 {
                     className: 'remove',
                     icon: 'trash-o',
-                    text: _('delicart.order_remove')
+                    text: _('glossary.term_remove')
                 }
             ]
         };
