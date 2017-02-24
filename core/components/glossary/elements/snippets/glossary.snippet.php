@@ -25,8 +25,6 @@ $toPlaceholder = $modx->getOption('toPlaceholder', $scriptProperties, '', true);
 
 // Outputness
 $output = '';
-$outputNav = '';
-$outputItems = '';
 
 // Grab all terms grouped by first letter
 $letters = $glossary->getGroupedTerms();
@@ -62,7 +60,6 @@ foreach ($letters as $letter => $terms) {
                 'letter' => $letter
             ));
             $termsHTML .= $modx->getChunk($termTpl, $params);
-            $outputItems .= $modx->getChunk($termTpl, $params);
         };
         // Prepare letter wrapper HTML
         $groupsHTML .= $modx->getChunk($groupTpl, array(
