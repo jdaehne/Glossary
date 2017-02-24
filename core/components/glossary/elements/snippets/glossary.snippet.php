@@ -22,6 +22,7 @@ $navOuterTpl = $modx->getOption('navOuterTpl', $scriptProperties, 'Glossary.navO
 $navItemTpl = $modx->getOption('navItemTpl', $scriptProperties, 'Glossary.navItemTpl', true);
 $showNav = (bool)$modx->getOption('showNav', $scriptProperties, true, true);
 $toPlaceholder = $modx->getOption('toPlaceholder', $scriptProperties);
+$navLetters = $modx->getOption('navLetters', $scriptProperties);
 
 // Outputness
 $output = '';
@@ -31,14 +32,26 @@ $outputItems = '';
 // Grab all terms grouped by first letter
 $letters = $glossary->getGroupedTerms();
 
+// add letters to array
+if (!empty($navLetters)) {
+    $navLetters = explode(',', $navLetters);
+    if (is_array($navLetters)) {
+        $navLetters = array_fill_keys($navLetters, array());
+        $navLetters = array_change_key_case($navLetters, CASE_UPPER);
+        $letters = array_merge($navLetters, $letters); 
+    }
+    ksort($letters);
+}
+
 // Show navigation list (if on)
 if ($showNav) {
     // Prepare letter chunks
     $tplLetters = '';
     foreach ($letters as $letter => $terms) {
-        if (count($terms) > 0) {
-            $tplLetters .= $modx->getChunk($navItemTpl, array('letter' => $letter));
-        };
+        $tplLetters .= $modx->getChunk($navItemTpl, array(
+            'letter' => $letter,
+            'disabled' => count($terms) > 0 ? 0 : 1,
+        ));
     };
     // Wrap letters in outer tpl
     $output .= $outputNav = $modx->getChunk($navOuterTpl, array('letters' => $tplLetters));
