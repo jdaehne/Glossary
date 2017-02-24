@@ -53,7 +53,8 @@ foreach ($letters as $letter => $terms) {
         $termsHTML = '';
         foreach ($terms as $term) {
             $params = array_merge($term, array(
-                'anchor' => strtolower(str_replace(' ', '-', $term['term']))
+                'anchor' => strtolower(str_replace(' ', '-', $term['term'])),
+                'letter' => $letter
             ));
             $outputItems .= $termsHTML .= $modx->getChunk($termTpl, $params);
         };
