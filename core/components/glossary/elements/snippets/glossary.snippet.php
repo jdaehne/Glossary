@@ -46,7 +46,6 @@ if ($showNav) {
 
 // Output all terms (grouped)
 $groupsHTML = '';
-//echo '<pre>'; die(print_r($letters));
 foreach ($letters as $letter => $terms) {
     if (count($terms)) {
         // Prepare Terms HTML
