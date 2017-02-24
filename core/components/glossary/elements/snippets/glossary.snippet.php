@@ -68,7 +68,8 @@ foreach ($letters as $letter => $terms) {
                 'anchor' => strtolower(str_replace(' ', '-', $term['term'])),
                 'letter' => $letter
             ));
-            $outputItems .= $termsHTML .= $modx->getChunk($termTpl, $params);
+            $termsHTML .= $modx->getChunk($termTpl, $params);
+            $outputItems .= $modx->getChunk($termTpl, $params);
         };
         // Prepare letter wrapper HTML
         $groupsHTML .= $modx->getChunk($groupTpl, array(
